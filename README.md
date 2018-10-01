@@ -34,7 +34,7 @@ Since Keycloak supports Freemarker, [a template file](./login/login.ftl) is prov
 
 ## Deployment
 
-1. After installing Keycloak, navigate to the these directory (e.g. ~/development/keycloak-3.4.3.Final/themes).
+1. After installing Keycloak, navigate to the themes directory (e.g. ~/development/keycloak-3.4.3.Final/themes).
 2. Create a directory named Alfresco.  
 3. Copy the login directory from this project to a login directory in the Alfresco directory you 
 just created
