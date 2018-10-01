@@ -2,8 +2,11 @@
 
 ## Overview
 
-Keycloak allows a user to provide alternative themes to replace the default
-Keycloak themes.
+The [Alfresco Identity Service](https://github.com/Alfresco/alfresco-identity-service) uses [Keycloak](https://www.keycloak.org/docs/3.4/).  Out of the box, the UI provided by Keycloak is 
+quite different from the rest of Alfresco.  But Keycloak allows a customer to provide alternative themes to replace the default
+Keycloak themes.  We can use this mechanism to provide an Alfresco theme.
+
+## Design
 
 The following themes can be replaced.
  
@@ -12,9 +15,7 @@ The following themes can be replaced.
 * email
 * admin 
  
-This projects contains a possible theme to replace the login theme.  It was done as an experiment to understand the level of effort and options.
-
-## Design
+This projects contains a possible theme to replace the login theme.  It was done as an experiment to understand the level of effort and options to implement [DEPLOY-148](https://issues.alfresco.com/jira/browse/AUTH-148).
 
 Several approaches are possible.  
 1. **Extend the existing themes**.  With this approach, a copy of the default theme is made and selective
@@ -39,8 +40,8 @@ Since Keycloak supports Freemarker, [a template file](./login/login.ftl) is prov
 3. Copy the login directory from this project to a login directory in the Alfresco directory you 
 just created
 4. Start Keycloak and navigate to the admin console theme.  Choose the *Alfresco*
-these as [illustrated](./screen-captures/admin-console-themes.png).  Click *Save*.
-5. Login to the Alfresco realm (e.g. http://localhost:8080/auth/realms/Alfresco/account/) and
+theme as [illustrated](./screen-captures/admin-console-themes.png).  Click *Save*.
+5. Login to a oage in the Alfresco realm that requires authentication (e.g. http://localhost:8080/auth/realms/Alfresco/account/) and
 you should see a screen like this.
 
 ![](screen-captures/example-login.png)
@@ -50,3 +51,7 @@ you should see a screen like this.
 This is a candidate to include in the Alfresco Identity Service.  
 
 Internationalization needs to be added as well as message handling.
+
+## More Information
+
+If you want to learn more about how to customize Keycloak themes, go [here](https://www.keycloak.org/docs/3.4/server_development/#_themes).
