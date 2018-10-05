@@ -50,8 +50,6 @@ you should see a screen like this.
 
 This is a candidate to include in the Alfresco Identity Service.  
 
-Internationalization needs to be added as well as message handling.
-
 ## More Information
 
 If you want to learn more about how to customize Keycloak themes, go [here](https://www.keycloak.org/docs/3.4/server_development/#_themes).
