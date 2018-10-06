@@ -22,7 +22,7 @@ Several approaches are possible.
 edits are made to the theme.  For example, different style sheets can be
 used but otherwise the layout provide by Keycloak could stay the same.
 2. **Use ADF**.  With this approach, the ADF component is used directly, effectively making Keycloak 
-and ADF app.
+an ADF app.
 3. **Custom login page**.  With this approach, a page is provided that uses the same approved Alfresco
 styles.
 
@@ -31,7 +31,7 @@ This project currently uses the approach of a custom login page (option #3).
 ## Implementation
 
 Since Keycloak supports Freemarker, [a template file](./login/login.ftl) is provided along with 
-[css styles](./login/resources/css/styles.css) and [images](./login/resources/img) like those documented in o look like the [approved designs](https://app.zeplin.io/project/57d69ef9c8a62bb604985525/screen/5a4dfb3c92a348c3fbe1c586)
+[css styles](./login/resources/css/styles.css) and [images](./login/resources/img) like those documented to look like the [approved designs](https://app.zeplin.io/project/57d69ef9c8a62bb604985525/screen/5a4dfb3c92a348c3fbe1c586)
 
 ## Deployment
 
