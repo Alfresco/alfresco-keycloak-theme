@@ -33,19 +33,50 @@ This project currently uses the approach of a custom login page (option #3).
 Since Keycloak supports Freemarker, [a template file](./login/login.ftl) is provided along with 
 [css styles](./login/resources/css/login.css) and [images](./login/resources/img) like those documented to look like the [approved designs](https://app.zeplin.io/project/57d69ef9c8a62bb604985525/screen/5a4dfb3c92a348c3fbe1c586)
 
-## Deployment
+## Deployment of the Theme Files
 
-1. After installing Keycloak, navigate to the themes directory (e.g. ~/development/keycloak-3.4.3.Final/themes).
-2. Create a directory named Alfresco.  
-3. Copy the login directory from this project to a login directory in the Alfresco directory you 
+### Deployment to a standalone Keycloak server
+1. After installing Keycloak, navigate to the themes directory as in e.g.
+```
+ ~/development/keycloak-4.2.1.Final/themes
+ ```
+2. Create a directory named *Alfresco*.  
+3. Copy the *login* directory from this project to a *login* directory in the Alfresco theme directory you 
 just created
-4. Start Keycloak and navigate to the admin console theme.  Choose the *Alfresco*
+4. Start Keycloak
+
+### Deployment to a Keycloak server running in a Kubernetes cluster
+1. Find the name of the pod in which the cluster is running 
+```
+kubectl get pods
+
+... erstwhile-rabbit-key-0  1/1  Running  1  20h
+
+```
+2. Git clone this repository
+3. Use the kubectl command to copy the login directory from the cloned project to the pod running Keycloak.  In the example below,the name of the Kubernetes namespace is *default*
+and the name of the pod is *erstwhile-rabbit-key-0*
+```
+kubectl cp ~/IdeaProjects/alfresco-keycloak-theme/login default/erstwhile-rabbit-key-0:/opt/jboss/keycloak/themes/Alfresco
+```
+
+## Using the Theme 
+**NOTE**: These instructions assume you are using a Keycloak realm named *Alfresco* such as is 
+created by the [Alfresco DBP Deployment](https://github.com/Alfresco/alfresco-dbp-deployment).  But you can also apply the theme to the *default* realm or some other realm.
+1. Navigate to the admin console for the realm as in e.g. 
+```
+http://localhost-k8s/auth/admin/master/console/#/realms/alfresco
+```
+2. Choose the *Alfresco*
 theme as [illustrated](./screen-captures/admin-console-themes.png).  Click *Save*.
-5. Login to a oage in the Alfresco realm that requires authentication (e.g. http://localhost:8080/auth/realms/Alfresco/account/) and
-you should see a screen like this.
+3. Login to a oage in the *Alfresco* realm that requires authentication (e.g. http://localhost-k8s/auth/realms/alfresco/account) and
+you should see a form like this.  
 
 ![](screen-captures/example-login.png)
 
+**NOTE**: If you are using the Alfresco DBP Deployment to access a resource that is configured to use Keycloak for authentication,
+such as APS, you will also see this login page automatically.
+      
 ## Next Steps
 
 This is a candidate to include in the Alfresco Identity Service.  
