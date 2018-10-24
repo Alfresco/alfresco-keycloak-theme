@@ -30,8 +30,8 @@ This project currently uses the approach of a custom login page (option #3).
 
 ## Implementation
 
-Since Keycloak supports Freemarker, [a template file](./login/login.ftl) is provided along with 
-[css styles](./login/resources/css/login.css) and [images](./login/resources/img) like those documented to look like the [approved designs](https://app.zeplin.io/project/57d69ef9c8a62bb604985525/screen/5a4dfb3c92a348c3fbe1c586)
+Since Keycloak supports Freemarker, [a template file](./theme/login/login.ftl) is provided along with 
+[css styles](./theme/login/resources/css/login.css) and [images](./theme/login/resources/img) like those documented to look like the [approved designs](https://app.zeplin.io/project/57d69ef9c8a62bb604985525/screen/5a4dfb3c92a348c3fbe1c586)
 
 ## Deployment of the Theme Files
 
@@ -57,7 +57,7 @@ kubectl get pods
 3. Use the kubectl command to copy the login directory from the cloned project to the pod running Keycloak.  In the example below,the name of the Kubernetes namespace is *default*
 and the name of the pod is *erstwhile-rabbit-key-0*
 ```
-kubectl cp ~/IdeaProjects/alfresco-keycloak-theme/login default/erstwhile-rabbit-key-0:/opt/jboss/keycloak/themes/Alfresco
+kubectl cp ~/IdeaProjects/alfresco-keycloak-theme/theme/login default/erstwhile-rabbit-key-0:/opt/jboss/keycloak/themes/alfresco
 ```
 
 ## Using the Theme 
