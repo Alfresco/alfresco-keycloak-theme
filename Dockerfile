@@ -1,3 +1,3 @@
 FROM busybox
-RUN mkdir alfresco
+RUN mkdir /alfresco
 COPY theme /alfresco
