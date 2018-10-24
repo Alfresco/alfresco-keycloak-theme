@@ -17,16 +17,20 @@
 
 	<body>
         <#nested "header">
+        <div class="login-content" style="background-image: url(&quot;${url.resourcesPath}/img/background.svg&quot;);">
+            <div class="box">
         <#if displayMessage && message?has_content>
         <div class="alert alert-${message.type}">
              <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
              <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
              <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
              <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-             <span class="MessageText">${message.summary?no_esc}</span>
+             <span class="message-text">${message.summary?no_esc}</span>
         </div>
         </#if>
         <#nested "form">
+            </div> 
+        </div>
 	</body>
 </html>
 </#macro>
