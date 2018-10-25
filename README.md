@@ -57,6 +57,9 @@ kubectl get pods
 3. Use the kubectl command to copy the login directory from the cloned project to the pod running Keycloak.  In the example below,the name of the Kubernetes namespace is *default*
 and the name of the pod is *erstwhile-rabbit-key-0*
 ```
+# create alfresco theme directory
+kubectl exec erstwhile-rabbit-key-0 --namespace default -- mkdir /opt/jboss/keycloak/themes/alfresco
+# copy theme files to the pod
 kubectl cp ~/IdeaProjects/alfresco-keycloak-theme/theme/login default/erstwhile-rabbit-key-0:/opt/jboss/keycloak/themes/alfresco
 ```
 
