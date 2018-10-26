@@ -72,7 +72,7 @@ http://localhost-k8s/auth/admin/master/console/#/realms/alfresco
 ```
 2. Choose the *Alfresco*
 theme as [illustrated](./screen-captures/admin-console-themes.png).  Click *Save*.
-3. Login to a oage in the *Alfresco* realm that requires authentication (e.g. http://localhost-k8s/auth/realms/alfresco/account) and
+3. Login to a page in the *Alfresco* realm that requires authentication (e.g. http://localhost-k8s/auth/realms/alfresco/account) and
 you should see a form like this.  
 
 ![](screen-captures/example-login.png)
