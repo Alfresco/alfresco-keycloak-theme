@@ -4,7 +4,7 @@
 
 The [Alfresco Identity Service](https://github.com/Alfresco/alfresco-identity-service) uses [Keycloak](https://www.keycloak.org/docs/3.4/).  Out of the box, the UI provided by Keycloak is 
 quite different from the rest of Alfresco.  But Keycloak allows a customer to provide alternative themes to replace the default
-Keycloak themes.  We can use this mechanism to provide an Alfresco theme.
+Keycloak themes.  We use this mechanism to provide an Alfresco theme.
 
 ## Design
 
@@ -15,7 +15,8 @@ The following themes can be replaced.
 * email
 * admin 
  
-This projects contains a possible theme to replace the login theme.  It was done as an experiment to understand the level of effort and options to implement [DEPLOY-148](https://issues.alfresco.com/jira/browse/AUTH-148).
+This projects contains a theme that can be used to replace the login theme to provide
+an experience that is consistent with Alfresco.  
 
 Several approaches are possible.  
 1. **Extend the existing themes**.  With this approach, a copy of the default theme is made and selective
@@ -33,7 +34,14 @@ This project currently uses the approach of a custom login page (option #3).
 Since Keycloak supports Freemarker, [a template file](./theme/login/login.ftl) is provided along with 
 [css styles](./theme/login/resources/css/login.css) and [images](./theme/login/resources/img) like those documented to look like the [approved designs](https://app.zeplin.io/project/57d69ef9c8a62bb604985525/screen/5a4dfb3c92a348c3fbe1c586)
 
+The project also includes improvements to the translated messages for the languages supported by Alfresco.
+
 ## Deployment of the Theme Files
+
+### Deployment with the Alfresco Identity Service
+If you deploy the Alfresco Identity Service as
+described [here](https://github.com/Alfresco/alfresco-identity-service), the Alfresco Keycloak Theme is 
+deployed automatically.   
 
 ### Deployment to a standalone Keycloak server
 1. After installing Keycloak, navigate to the themes directory as in e.g.
@@ -77,13 +85,9 @@ you should see a form like this.
 
 ![](screen-captures/example-login.png)
 
-**NOTE**: If you are using the Alfresco DBP Deployment to access a resource that is configured to use Keycloak for authentication,
-such as APS, you will also see this login page automatically.
-      
-## Next Steps
-
-This is a candidate to include in the Alfresco Identity Service.  
+**NOTE**: If you are using the [Alfresco DBP Deployment](https://github.com/Alfresco/alfresco-dbp-deployment) to access a resource that is configured to use Keycloak for authentication,
+such as the Process Workspace, you will also see this login page automatically.      
 
 ## More Information
 
-If you want to learn more about how to customize Keycloak themes, go [here](https://www.keycloak.org/docs/3.4/server_development/#_themes).
+If you want to learn more about how to customize Keycloak themes, go [here](https://www.keycloak.org/docs/4.2/server_development/#_themes).
