@@ -38,10 +38,10 @@ The project also includes improvements to the translated messages for the langua
 
 ## Deployment of the Theme Files
 
-### Deployment with the Digital Business Platform
-If you deploy the Alfresco Digital Business Platform as
-described [here](https://github.com/Alfresco/alfresco-dbp-deployment), the Alfresco Identity Service is 
-deployed automatically.  
+### Deployment with the Alfresco Identity Service
+If you deploy the Alfresco Identity Service as
+described [here](https://github.com/Alfresco/alfresco-identity-service), the Alfresco Keycloak Theme is 
+deployed automatically.
 
 ### Deployment to a standalone Keycloak server
 1. After installing Keycloak, navigate to the themes directory as in e.g.
