@@ -41,7 +41,7 @@ The project also includes improvements to the translated messages for the langua
 ### Deployment with the Alfresco Identity Service
 If you deploy the Alfresco Identity Service as
 described [here](https://github.com/Alfresco/alfresco-identity-service), the Alfresco Keycloak Theme is 
-deployed automatically.
+deployed automatically.   
 
 ### Deployment to a standalone Keycloak server
 1. After installing Keycloak, navigate to the themes directory as in e.g.
@@ -85,8 +85,8 @@ you should see a form like this.
 
 ![](screen-captures/example-login.png)
 
-**NOTE**: If you are using the Alfresco DBP Deployment to access a resource that is configured to use Keycloak for authentication,
-such as APS, you will also see this login page automatically.      
+**NOTE**: If you are using the [Alfresco DBP Deployment](https://github.com/Alfresco/alfresco-dbp-deployment) to access a resource that is configured to use Keycloak for authentication,
+such as the Process Workspace, you will also see this login page automatically.      
 
 ## More Information
 
