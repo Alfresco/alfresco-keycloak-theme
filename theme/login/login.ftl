@@ -39,9 +39,6 @@
                             <input class="submit" type="submit" value="${msg("doLogIn")}" tabindex="3">
                         </form>
                     </div>
-                    <div>
-                        <a class="helpLink" href="http://docs.alfresco.com" tabindex="4">${msg("needHelp")}</a>
-                    </div>
                 </div>
                 <div>
                     <p class="copyright">&copy; ${msg("copyright", "${.now?string('yyyy')}")}</p>
