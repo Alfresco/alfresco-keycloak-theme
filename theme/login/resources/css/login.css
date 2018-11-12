@@ -97,20 +97,6 @@ body {
   margin-top: 60px;
   margin-bottom: 60px;
 }
-.login-content .box .helpLink {
-  width: 87px;
-  height: 20px;
-  font-family: Muli;
-  font-size: 14px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ff9800;
-  margin-left: 32px;
-}
 .login-content .box .visibility {
   position: relative;
   left: 296px;
