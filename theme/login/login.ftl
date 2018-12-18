@@ -39,16 +39,15 @@
             </div>
         </#if>
         <#if social.providers??>
-            <hr class="identity-providers-hr"/>
+            <p class="para">${msg("selectAlternative")}</p>
             <div id="social-providers">
-                <p class="identity-providers">Choose an Identity Provider:</p>
                 <#list social.providers as p>
                 <input class="social-link-style" type="button" onclick="location.href='${p.loginUrl}';" value="${p.displayName}"/>
                 </#list>
             </div>
         </#if>
-    <div>
-        <p class="copyright">&copy; ${msg("copyright", "${.now?string('yyyy')}")}</p>
-    </div>
+        <div>
+            <p class="copyright">&copy; ${msg("copyright", "${.now?string('yyyy')}")}</p>
+        </div>
     </#if>
 </@layout.registrationLayout>
