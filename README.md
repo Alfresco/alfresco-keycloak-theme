@@ -88,6 +88,15 @@ you should see a form like this.
 **NOTE**: If you are using the [Alfresco DBP Deployment](https://github.com/Alfresco/alfresco-dbp-deployment) to access a resource that is configured to use Keycloak for authentication,
 such as the Process Workspace, you will also see this login page automatically.      
 
+## Using the Theme with SAML Identity Providers
+The Identity Service also supports the use of SAML Identity Providers.   If you use the [Keycloak 
+Admin Console](https://www.keycloak.org/docs/4.5/server_admin/#admin-console) to configure one or more such providers you will see a button for each of the 
+providers, as illustrated here.  Clicking on one of the buttons will redirect the browser to the authentication
+page configured for that provider.
+
+![](screen-captures/example-login-with-SAML.png)
+
+
 ## More Information
 
 If you want to learn more about how to customize Keycloak themes, go [here](https://www.keycloak.org/docs/4.2/server_development/#_themes).
