@@ -68,7 +68,7 @@ and the name of the pod is *erstwhile-rabbit-key-0*
 # create alfresco theme directory
 kubectl exec erstwhile-rabbit-key-0 --namespace default -- mkdir /opt/jboss/keycloak/themes/alfresco
 # copy theme files to the pod
-kubectl cp ~/IdeaProjects/alfresco-keycloak-theme/theme/login default/erstwhile-rabbit-key-0:/opt/jboss/keycloak/themes/alfresco
+kubectl cp ~/IdeaProjects/alfresco-identity-service-theme/theme/login default/erstwhile-rabbit-key-0:/opt/jboss/keycloak/themes/alfresco
 ```
 
 ## Using the Theme 
