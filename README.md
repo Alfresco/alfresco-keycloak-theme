@@ -99,4 +99,4 @@ page configured for that provider.
 
 ## More Information
 
-If you want to learn more about how to customize Keycloak themes, go [here](https://www.keycloak.org/docs/4.2/server_development/#_themes).
+If you want to learn more about how to customize Keycloak themes, go [here](https://www.keycloak.org/docs/4.8/server_development/#_themes).
