@@ -24,7 +24,7 @@
         </div>
         <div class="box-container">
             <div>
-                <p class="application-name">Alfresco Identity Service</p>
+                <p class="application-name">Alfresco Identity Management Service</p>
             </div>
         <#if realm.password>
             <div>
