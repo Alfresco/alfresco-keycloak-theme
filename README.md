@@ -2,7 +2,7 @@
 
 ## Overview
 
-The [Alfresco Identity Service](https://github.com/Alfresco/alfresco-identity-service) uses [Keycloak](https://www.keycloak.org/docs/3.4/).  Out of the box, the UI provided by Keycloak is 
+The [Alfresco Identity Service](https://github.com/Alfresco/alfresco-identity-service) uses [Keycloak](https://www.keycloak.org/).  Out of the box, the UI provided by Keycloak is 
 quite different from the rest of Alfresco.  But Keycloak allows a customer to provide alternative themes to replace the default
 Keycloak themes.  We use this mechanism to provide an Alfresco theme.
 
