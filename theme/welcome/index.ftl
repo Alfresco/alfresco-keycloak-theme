@@ -53,15 +53,15 @@
                 <p class="alert success">${successMessage}</p>
             <#elseif errorMessage?has_content>
                 <p class="alert error">${errorMessage}</p>
-                <h3><img src="welcome-content/user.png">${properties.AdministrationConsole}</h3>
+                <h3><img src="welcome-content/user.png">Administration Console</h3>
             <#elseif bootstrap>
                 <#if localUser>
-                    <h3><img src="welcome-content/user.png">${properties.AdministrationConsole}</h3>
-                    <p>${properties.createUserMessage}</p>
+                    <h3><img src="welcome-content/user.png">Administration Console</h3>
+                    <p>Please create an initial admin user to get started.</p>
                 <#else>
                     <p class="welcome-message">
-                        <img src="welcome-content/alert.png">${properties.localAccessMessage} <br><br>${properties.open} <a href="http://localhost:8080/auth">http://localhost:8080/auth</a>
-                        <br>${properties.orUseMessage}
+                        <img src="welcome-content/alert.png">You need local access to create the initial admin user. <br><br>Open <a href="http://localhost:8080/auth">http://localhost:8080/auth</a>
+                        <br>or use the add-user-keycloak script.
                     </p>
                 </#if>
             </#if>
@@ -69,39 +69,39 @@
             <#if bootstrap && localUser>
                 <form method="post" class="welcome-form">
                     <p>
-                        <label for="username">${properties.usernameLabel}</label>
+                        <label for="username">Username</label>
                         <input id="username" name="username" />
                     </p>
 
                     <p>
-                        <label for="password">${properties.Password}</label>
+                        <label for="password">Password</label>
                         <input id="password" name="password" type="password" />
                     </p>
 
                     <p>
-                        <label for="passwordConfirmation">${properties.PasswordConfirmationLabel}</label>
+                        <label for="passwordConfirmation">Password confirmation</label>
                         <input id="passwordConfirmation" name="passwordConfirmation" type="password" />
                     </p>
 
                     <input id="stateChecker" name="stateChecker" type="hidden" value="${stateChecker}" />
 
-                    <button id="create-button" type="submit" class="btn btn-primary">${properties.create}</button>
+                    <button id="create-button" type="submit" class="btn btn-primary">Create</button>
                 </form>
             </#if>
             <div class="welcome-primary-link">
-              <h3><a href="admin/"><img src="welcome-content/user.png">${properties.AdministrationConsole} <i class="fa fa-angle-right link" aria-hidden="true"></i></a></h3>
+              <h3><a href="admin/"><img src="welcome-content/user.png">Administration Console <i class="fa fa-angle-right link" aria-hidden="true"></i></a></h3>
               <div class="description">
-                ${properties.centrallyManageMessage} ${productNameFull} server
+                Centrally manage all aspects of the ${productNameFull} server
               </div>
             </div>
           </div>
         </div>
         <div class="col-xs-12 col-sm-4">
           <div class="card-pf h-l">
-            <h3><a href="${properties.documentationUrl}"><img class="doc-img" src="welcome-content/admin-console.png">${properties.keycloakDocumentation} <i class="fa fa-angle-right link" aria-hidden="true"></i></a></h3>
+            <h3><a href="${properties.documentationUrl}"><img class="doc-img" src="welcome-content/admin-console.png">Keycloak Documentation <i class="fa fa-angle-right link" aria-hidden="true"></i></a></h3>
             <div class="description">
 
-              ${properties.userGuideAndEtcMessage}
+              User Guide, Admin REST API and Javadocs
 
             </div>
           </div>
@@ -109,13 +109,13 @@
         <div class="col-xs-12 col-sm-4">
         <#if properties.displayCommunityLinks = "true">
           <div class="card-pf h-m">
-            <h3><a href="http://www.keycloak.org"><img src="welcome-content/keycloak-project.png">${properties.keycloakProject} <i class="fa fa-angle-right link" aria-hidden="true"></i></a></h3>
+            <h3><a href="http://www.keycloak.org"><img src="welcome-content/keycloak-project.png">Keycloak Project <i class="fa fa-angle-right link" aria-hidden="true"></i></a></h3>
           </div>
           <div class="card-pf h-m">
-            <h3><a href="https://lists.jboss.org/mailman/listinfo/keycloak-user"><img src="welcome-content/mail.png">${properties.mailingList} <i class="fa fa-angle-right link" aria-hidden="true"></i></a></h3>
+            <h3><a href="https://lists.jboss.org/mailman/listinfo/keycloak-user"><img src="welcome-content/mail.png">Mailing List <i class="fa fa-angle-right link" aria-hidden="true"></i></a></h3>
           </div>
           <div class="card-pf h-m">
-            <h3><a href="https://issues.jboss.org/browse/KEYCLOAK"><img src="welcome-content/bug.png">${properties.ReportAnIssue} <i class="fa fa-angle-right link" aria-hidden="true"></i></a></h3>
+            <h3><a href="https://issues.jboss.org/browse/KEYCLOAK"><img src="welcome-content/bug.png">Report an issue <i class="fa fa-angle-right link" aria-hidden="true"></i></a></h3>
           </div>
         </#if>
         </div>
