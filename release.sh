@@ -52,7 +52,7 @@ STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$RELEASES_URL" -u "$AUTH" 
   \"prerelease\": $PRE_RELEASE
 }")
 
-if [ $STATUS_CODE -eq "201"]; then
+if [ $STATUS_CODE -eq "201" ]; then
     log_info "$THEME_VERSION has been released successfully."
 else
     log_error "Couldn't release $THEME_VERSION. Status Code: $STATUS_CODE"
