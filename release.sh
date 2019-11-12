@@ -30,7 +30,7 @@ done
 
 REPO_URL="https://api.github.com/repos/Alfresco/alfresco-keycloak-theme"
 RELEASES_URL="$REPO_URL/releases"
-TAG_URL="$REPO_URL/releases/tags/$THEME_VERSION"
+TAGS_URL="$REPO_URL/releases/tags/$THEME_VERSION"
 AUTH="$username:$password"
 PRE_RELEASE="${prerelease:-false}"
 DISTRIBUTION_NAME="alfresco-keycloak-theme-$THEME_VERSION.zip"
@@ -80,8 +80,8 @@ if [ $STATUS_CODE -eq "401" ] || [ $STATUS_CODE -eq "404" ]; then
 fi
 
 # Get upload_url
-log_info "Getting upload asset URL from: $TAG_URL"
-UPLOAD_URL=$(curl -s "$TAG_URL" -u "$AUTH") | jq -r ".upload_url" | cut -d'{' -f 1
+log_info "Getting upload asset URL from: $TAGS_URL"
+UPLOAD_URL=$(curl -s "$TAGS_URL" -u "$AUTH") | jq -r ".upload_url" | cut -d'{' -f 1
 
 log_info "Upload asset URL is: '$UPLOAD_URL'"
 
