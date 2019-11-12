@@ -42,6 +42,12 @@ fi
 log_info "Tag the current branch as $THEME_VERSION"
 git tag "$THEME_VERSION"
 
+# check credentials
+STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" $REPO_URL -u "$AUTH")
+if [ $STATUS_CODE -eq "401" ] || [ $STATUS_CODE -eq "404" ]; then
+    log_error "Bad credentials. Status Code: $STATUS_CODE"
+fi
+
 log_info "Create $THEME_VERSION release..."
 STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$RELEASES_URL" -u "$AUTH" \
     -H 'Content-Type: application/json' \
@@ -73,15 +79,9 @@ while [ "$WAIT_COUNTER" -lt "$WAIT_COUNTER_MAX" ]; do
     continue
 done
 
-# check credentials
-STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" $REPO_URL -u "$AUTH")
-if [ $STATUS_CODE -eq "401" ] || [ $STATUS_CODE -eq "404" ]; then
-    log_error "Bad credentials. Status Code: $STATUS_CODE"
-fi
-
 # Get upload_url
 log_info "Getting upload asset URL from: $TAGS_URL"
-UPLOAD_URL=$(curl -s "$TAGS_URL" -u "$AUTH") | jq -r ".upload_url" | cut -d'{' -f 1
+UPLOAD_URL=$(curl -s "$TAGS_URL" -u "$AUTH" | grep upload_url | sed 's/"upload_url":// ; s/"//g' | cut -d'{' -f 1 | tr -d '[:space:]')
 
 log_info "Upload asset URL is: '$UPLOAD_URL'"
 
