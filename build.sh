@@ -6,7 +6,7 @@ source "${currentDir}/build.properties"
 
 DISTRIBUTION_NAME=alfresco-keycloak-theme-$THEME_VERSION
 
-# prepare and zip the them content
+# prepare and zip the theme content
 echo "info::: Removing an existing '$DISTRIBUTION_NAME.zip' file."
 rm -rf $DISTRIBUTION_NAME.zip
 
