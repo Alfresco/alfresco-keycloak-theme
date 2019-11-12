@@ -8,6 +8,11 @@
 *.iml
 *.iws
 
+# Package Files #
+*.jar
+*.zip
+*.tar.gz
+
 # Visual Studio Code
 .vscode/
 
