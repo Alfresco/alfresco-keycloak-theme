@@ -1,4 +1,14 @@
 #!/bin/bash
+
+# Available parameters:
+# - username
+# - paasword
+# - prerelease
+#
+# Example:
+# release.sh username=johndoe password=pass prerelease=true
+#
+
 set -o errexit
 
 declare -r currentDir="$(dirname "${BASH_SOURCE[0]}")"
@@ -13,9 +23,15 @@ log_error() {
     exit 1
 }
 
+ARGS=$@
+for arg in $ARGS; do
+    eval "$arg"
+done
+
 REPO_URL="https://api.github.com/repos/Alfresco/alfresco-keycloak-theme"
 TAG_URL="$REPO_URL/releases/tags/$THEME_VERSION"
-AUTH="alfresco-build:$bamboo_github_alfresco_build_password"
+AUTH="$username:$password"
+PRE_RELEASE="${prerelease:-false}"
 DISTRIBUTION_NAME="alfresco-keycloak-theme-$THEME_VERSION.zip"
 
 if [ ! -f "$DISTRIBUTION_NAME" ]; then
@@ -35,13 +51,13 @@ STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$RELEASES_URL" -u "$AUTH" 
   \"tag_name\": \"$THEME_VERSION\",
   \"name\": \"$THEME_VERSION\",
   \"draft\": false,
-  \"prerelease\": false
+  \"prerelease\": $PRE_RELEASE
 }")
 
 if [ $STATUS_CODE -eq "201"]; then
     log_info "$THEME_VERSION has been released successfully."
 else
-    log_error "Couldn’t release $THEME_VERSION. Status Code: $STATUS_CODE"
+    log_error "Couldn't release $THEME_VERSION. Status Code: $STATUS_CODE"
 fi
 
 WAIT_COUNTER=0
