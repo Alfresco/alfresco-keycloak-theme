@@ -29,6 +29,7 @@ for arg in $ARGS; do
 done
 
 REPO_URL="https://api.github.com/repos/Alfresco/alfresco-keycloak-theme"
+RELEASES_URL="$REPO_URL/releases"
 TAG_URL="$REPO_URL/releases/tags/$THEME_VERSION"
 AUTH="$username:$password"
 PRE_RELEASE="${prerelease:-false}"
@@ -40,9 +41,6 @@ fi
 
 log_info "Tag the current branch as $THEME_VERSION"
 git tag "$THEME_VERSION"
-
-log_info "Push $THEME_VERSION tag."
-git push origin "$THEME_VERSION"
 
 log_info "Create $THEME_VERSION release..."
 STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$RELEASES_URL" -u "$AUTH" \
