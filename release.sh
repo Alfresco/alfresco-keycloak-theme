@@ -94,4 +94,4 @@ log_info "Uploading '$DISTRIBUTION_NAME' asset... "
 # Add asset name to the URL
 UPLOAD_ASSET_URL="$UPLOAD_URL?name=$(basename $DISTRIBUTION_NAME)"
 # Upload asset
-curl $UPLOAD_ASSET_URL -u "$AUTH" -H "Content-Type: application/octet-stream" -F "file=@$DISTRIBUTION_NAME"
+curl $UPLOAD_ASSET_URL -u "$AUTH" -H "Content-Type: application/octet-stream" --data-binary @"$DISTRIBUTION_NAME"
