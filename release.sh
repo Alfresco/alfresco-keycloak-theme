@@ -2,7 +2,7 @@
 
 # Available parameters:
 # - username
-# - paasword
+# - password
 # - prerelease
 #
 # Example:
