@@ -2,21 +2,27 @@ dist: trusty
 sudo: required
 language: bash
 
+branches:
+  only:
+    - master
+
 stages:
-  - Build
-  - Release
+  - name: Build and Release
 
 jobs:
   include:
-    - stage: Build
-      name: "Build zip distribution"
-      script: 
+    - stage: "Build and Release"
+      name: "Build and release alfresco-keycloak-theme"
+      if: fork = false AND (branch = master) AND type != pull_request AND commit_message !~ /\[no-release\]/
+      before_deploy:
+        - ./set-version.sh
+        - source build.properties
+        - echo "Prepare deployment of alfresco-keycloak-theme-$THEME_VERSION"
         - ./build.sh
-    - stage: Release
       deploy:
         provider: releases
         api_key: $GITHUB_TOKEN
-        file: "alfresco-keycloak-theme-$TRAVIS_TAG.zip"
+        file: "alfresco-keycloak-theme-$THEME_VERSION.zip"
         skip_cleanup: true
         edge: true
         on:
