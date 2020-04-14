@@ -1,5 +1,7 @@
 # Alfresco Keycloak Theme
 
+[![Build Status](https://travis-ci.com/Alfresco/alfresco-keycloak-theme.svg?branch=master)](https://travis-ci.com/Alfresco/alfresco-keycloak-theme)
+
 ## Overview
 
 The [Alfresco Identity Service](https://github.com/Alfresco/alfresco-identity-service) uses [Keycloak](https://www.keycloak.org/).  Out of the box, the UI provided by Keycloak is 
