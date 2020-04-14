@@ -19,6 +19,6 @@ jobs:
         file: "alfresco-keycloak-theme-$TRAVIS_TAG.zip"
         skip_cleanup: true
         edge: true
-      on:
-        tag: true
-        repo: Alfresco/alfresco-keycloak-theme
+        on:
+          tags: true
+          repo: Alfresco/alfresco-keycloak-theme
