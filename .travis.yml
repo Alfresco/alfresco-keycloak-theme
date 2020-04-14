@@ -18,6 +18,8 @@ jobs:
         - ./set-version.sh
         - source build.properties
         - echo "Prepare deployment of alfresco-keycloak-theme-$THEME_VERSION"
+        - export TRAVIS_TAG=$THEME_VERSION
+        - git tag "$TRAVIS_TAG" -m ""
         - ./build.sh
       deploy:
         provider: releases
@@ -25,6 +27,3 @@ jobs:
         file: "alfresco-keycloak-theme-$THEME_VERSION.zip"
         skip_cleanup: true
         edge: true
-        on:
-          branch: master
-          repo: Alfresco/alfresco-keycloak-theme
