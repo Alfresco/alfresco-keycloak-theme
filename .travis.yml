@@ -1,0 +1,28 @@
+dist: trusty
+sudo: required
+language: bash
+
+branches:
+  only:
+    - master
+
+stages:
+  - Build
+  - Release
+
+jobs:
+  include:
+    - stage: Build
+      name: "Build zip distribution"
+      script: 
+        - ./build.sh
+    - stage: Release
+      deploy:
+        provider: releases
+        api_key: $GITHUB_TOKEN
+        file: "alfresco-keycloak-theme-$TRAVIS_TAG.zip"
+        skip_cleanup: true
+        edge: true
+        on:
+          tags: true
+          repo: Alfresco/alfresco-keycloak-theme
