@@ -25,3 +25,6 @@ jobs:
         file: "alfresco-keycloak-theme-$THEME_VERSION.zip"
         skip_cleanup: true
         edge: true
+        on:
+          branch: master
+          repo: Alfresco/alfresco-keycloak-theme
