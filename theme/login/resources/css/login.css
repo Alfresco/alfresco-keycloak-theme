@@ -10,7 +10,7 @@ body, html {
   height: 100%;
 }
 body {
-  margin: 0
+  margin: 0;
 }
 .login-content {
   background-size:cover;
@@ -19,7 +19,7 @@ body {
   min-width: 320px;
   display:flex;
   justify-content:center;
-  flex-direction:column
+  flex-direction:column;
 }
 .login-content .box {
   width: 448px;
@@ -48,7 +48,7 @@ body {
   line-height: 0.83;
   letter-spacing: -0.4px;
   text-align: left;
-  color: #1976d2;
+  color: #0055B8;
   margin-left: 32px;
   margin-top: 40px;
 }
@@ -74,7 +74,7 @@ body {
   background-color: #fff;
 }
 .login-content .box input[type="text"]:focus, .login-content .box input[type="password"]:focus {
-  border-bottom: 2px solid #ff9800;
+  border-bottom: 2px solid #0055B8;
 }
 .login-content .box input[type="text"]:-webkit-autofill, .login-content .box input[type="password"]:-webkit-autofill
 {
@@ -84,7 +84,7 @@ body {
   width: 320px;
   height: 36px;
   border-radius: 2px;
-  background-color: #ff9800;
+  background-color: #00754a;
   font-family: Muli;
   font-size: 14px;
   font-weight: bold;
@@ -127,7 +127,7 @@ body {
   line-height: 1.3;
   letter-spacing: -0.4px;
   text-align: left;
-  color: red;
+  color: #b8082a;
   border: 0px;
   position: relative;
   top: 210px;
@@ -145,7 +145,7 @@ body {
   line-height: 0.83;
   letter-spacing: -0.4px;
   text-align: left;
-  color: #1976d2;
+  color: #0055B8;
   margin-left: 32px;
   margin-top: 20px;
 }
@@ -163,9 +163,9 @@ body {
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
-  color: #ff9800;
+  color: #00754a;
   border-style: solid;
-  border-color: #ff9800;
+  border-color: #00754a;
   margin-top: 0px;
   margin-left: 30px;
   margin-bottom: 10px;
