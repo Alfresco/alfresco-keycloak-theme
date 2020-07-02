@@ -48,7 +48,7 @@ deployed automatically.
 ### Deployment to a standalone Keycloak server
 1. After installing Keycloak, navigate to the themes directory as in e.g.
 ```
- ~/development/keycloak-4.5.0.Final/themes
+ ~/development/keycloak-10.0.2/themes
  ```
 2. Create a directory named *Alfresco*.  
 3. Copy the *login* directory from this project to a *login* directory in the Alfresco theme directory you 
