@@ -41,13 +41,13 @@ body {
 .login-content .box .application-name {
   width: 270px;
   font-family: Muli;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
   line-height: 0.83;
   letter-spacing: -0.4px;
-  text-align: left;
+  text-align: center;
   color: #0055B8;
   margin-left: 32px;
   margin-top: 40px;
