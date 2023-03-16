@@ -14,12 +14,12 @@ jobs:
       - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.36.0
       - name: "Build"
         run: |
-          echo "Prepare deployment of alfresco-keycloak-theme-${{  github.ref_name }}""
+          echo "Prepare deployment of alfresco-keycloak-theme-${{ github.ref_name }}""
           bash ./build.sh
       - name: "Upload Release Asset"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload ${{  github.ref_name }}" alfresco-keycloak-theme-${{  github.ref_name }}".zip
+        run: gh release upload ${{  github.ref_name }}" alfresco-keycloak-theme-${{ github.ref_name }}".zip
 
 
 
