@@ -1,0 +1,25 @@
+name: Alfresco Keycloak Theme
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+
+jobs:
+  build_and_release:
+    name: "Build and release alfresco-keycloak-theme"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Alfresco/alfresco-build-tools/.github/actions/setup-java-build@v1.36.0
+      - name: "Build"
+        run: |
+          echo "Prepare deployment of alfresco-keycloak-theme-${{  github.ref_name }}""
+          bash ./build.sh
+      - name: "Upload Release Asset"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{  github.ref_name }}" alfresco-keycloak-theme-${{  github.ref_name }}".zip
+
+
+
