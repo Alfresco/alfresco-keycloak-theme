@@ -1,9 +1,9 @@
 name: Alfresco Keycloak Theme CI
 
 on:
-  push:
-    tags:
-      - '*'
+  release:
+    types: [ published ]
+  workflow_dispatch:
 
 jobs:
   build_and_release:
