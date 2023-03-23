@@ -25,7 +25,7 @@
              <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
              <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
              <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-             <span class="message-text">${message.summary?no_esc}</span>
+             <span class="message-text">${message.summary}</span>
         </div>
         </#if>
         <#nested "form">
