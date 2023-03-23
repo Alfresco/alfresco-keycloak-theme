@@ -1,6 +1,6 @@
 # Alfresco Keycloak Theme
 
-[![Build Status](https://travis-ci.com/Alfresco/alfresco-keycloak-theme.svg?branch=master)](https://travis-ci.com/Alfresco/alfresco-keycloak-theme)
+[![Build Status](https://github.com/Alfresco/alfresco-keycloak-theme/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/Alfresco/alfresco-keycloak-theme/actions/workflows/ci.yml)
 
 ## Overview
 
