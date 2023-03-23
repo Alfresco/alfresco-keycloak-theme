@@ -1,9 +1,9 @@
 name: Alfresco Keycloak Theme CI
 
 on:
-  release:
-    types: [ published ]
-  workflow_dispatch:
+  push:
+    tags:
+      - '*'
 
 jobs:
   build_and_release:
@@ -15,7 +15,9 @@ jobs:
         run: |
           echo "Prepare deployment of alfresco-keycloak-theme-${{ github.ref_name }}"
           bash ./build.sh
-      - name: "Upload Release Asset"
+      - name: "Create Release And Upload Release Asset"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload ${{ github.ref_name }} alfresco-keycloak-theme-${{ github.ref_name }}.zip
+        run: |
+          gh release create ${{ github.ref_name }} -t ${{ github.ref_name }}
+          gh release upload ${{ github.ref_name }} alfresco-keycloak-theme-${{ github.ref_name }}.zip
