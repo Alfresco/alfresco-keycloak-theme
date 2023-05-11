@@ -10,7 +10,7 @@ RUN apt-get update && apt-get -y install git && \
 FROM bitnami/keycloak:21.1.1
 USER root
 
-COPY --from=GITTER /tmp/keywind /opt/bitnami/keycloak/themes/keywind
+COPY --from=GITTER /tmp/keywind/theme/keywind /opt/bitnami/keycloak/themes/keywind
 COPY --chown=keycloak:root theme /opt/bitnami/keycloak/themes/Cloudyne
 
 RUN /opt/bitnami/scripts/keycloak/postunpack.sh
