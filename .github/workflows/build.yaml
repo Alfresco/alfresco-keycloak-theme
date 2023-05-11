@@ -22,10 +22,6 @@ jobs:
           registry: ghcr.io
           username: cloudynes
           password: ${{ secrets.GITHUB_TOKEN }}
-      - 
-        name: Download keywind theme
-        run: |
-          rm -rf keywind && git clone https://github.com/lukin/keywind.git keywind
       -
         name: Build and push
         uses: docker/build-push-action@v3
