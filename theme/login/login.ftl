@@ -31,7 +31,7 @@
                <form id="kc-form-login" class="form" onsubmit="return true;" action="${url.loginAction}" method="post">
                     <input id="username" class="login-field" placeholder="${msg("username")}" type="text" name="username" tabindex="1">
                     <div>
-                        <label class="visibility" id="v" onclick="togglePassword()"><img id="vi" src="${url.resourcesPath}/img/eye-off.png"></label>
+                        <label class="visibility" id="v" onclick="togglePassword()"><img id="vi" src="${url.resourcesPath}/img/eye-off.png" alt="${msg("togglePasswordVisibility")}"></label>
                     </div>
                 <input id="password" class="login-field" placeholder="${msg("password")}" type="password" name="password" tabindex="2">
                 <input class="submit" type="submit" value="${msg("doLogIn")}" tabindex="3">
