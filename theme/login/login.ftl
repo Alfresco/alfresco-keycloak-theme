@@ -38,7 +38,7 @@
                 </form>
             </div>
         </#if>
-        <#if social.providers??>
+        <#if social.providers?? && social.providers?has_content>
             <p class="para">${msg("selectAlternative")}</p>
             <div id="social-providers">
                 <#list social.providers as p>
