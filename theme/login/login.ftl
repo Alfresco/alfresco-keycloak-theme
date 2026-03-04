@@ -9,12 +9,15 @@
             function togglePassword() {
                 var x = document.getElementById("password");
                 var v = document.getElementById("vi");
+                var btn = document.getElementById("v");
                 if (x.type === "password") {
                     x.type = "text";
                     v.src = "${url.resourcesPath}/img/eye.png";
+                    btn.setAttribute("aria-pressed", "true");
                 } else {
                     x.type = "password";
                     v.src = "${url.resourcesPath}/img/eye-off.png";
+                    btn.setAttribute("aria-pressed", "false");
                 }
             }
         </script>
@@ -31,7 +34,7 @@
                <form id="kc-form-login" class="form" onsubmit="return true;" action="${url.loginAction}" method="post">
                     <input id="username" class="login-field" placeholder="${msg("username")}" type="text" name="username" tabindex="0">
                     <div>
-                        <label class="visibility" id="v" onclick="togglePassword()"><img id="vi" src="${url.resourcesPath}/img/eye-off.png" alt="${msg("togglePasswordVisibility")}"></label>
+                        <button class="visibility" id="v" type="button" onclick="togglePassword()" aria-label="${msg("togglePasswordVisibility")}" aria-pressed="false"><img id="vi" src="${url.resourcesPath}/img/eye-off.png" aria-hidden="true"></button>
                     </div>
                 <input id="password" class="login-field" placeholder="${msg("password")}" type="password" name="password" tabindex="0">
                 <input class="submit" type="submit" value="${msg("doLogIn")}" tabindex="0">

@@ -106,6 +106,9 @@ body {
   height: 24px;
   opacity: 0.54;
   border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
 }
 .login-content .box .copyright {
   min-width: 320px;
