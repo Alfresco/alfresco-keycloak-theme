@@ -33,6 +33,7 @@ body {
   padding-left: 32px;
 }
 .login-content .box .logo {
+  height: 40px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -84,7 +85,7 @@ body {
   width: 320px;
   height: 36px;
   border-radius: 2px;
-  background-color: #00754a;
+  background-color: #5654AC;
   font-family: Muli;
   font-size: 14px;
   font-weight: bold;
