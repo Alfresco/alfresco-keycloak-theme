@@ -8,6 +8,7 @@
     <meta name="robots" content="noindex, nofollow">
 
     <title><#nested "title"></title>
+    <link rel="icon" type="image/svg-xml" href="${url.resourcesPath}/img/favicon-96x96.svg" sizes="96x96">
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
